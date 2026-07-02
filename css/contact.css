@@ -1,0 +1,205 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bordeaux: #6b1d24;
+      --bordeaux-mid: rgba(107,29,36,0.18);
+      --bordeaux-light: rgba(107,29,36,0.06);
+      --cream: #f7f3ee;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+    }
+    body { font-family: var(--sans); color: var(--bordeaux); background: #fff; overflow-x: hidden; }
+
+  
+    /* ── HEADER ── */
+    .page-header {
+      max-width: 1200px; margin: 80px auto 60px; padding: 0 40px;
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: end;
+    }
+    .page-header-left {
+      border-left: 2px solid var(--bordeaux); padding-left: 28px;
+    }
+    .page-eyebrow {
+      font-family: var(--sans); font-size: 0.78rem;
+      letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: var(--serif); font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 300; line-height: 1.1;
+    }
+    .page-title em { font-style: italic; }
+    .page-header-right p {
+      font-family: var(--serif); font-size: 1.25rem; line-height: 1.7;
+      font-style: italic; opacity: 0.85;
+    }
+
+    /* ── CHOIX DE L'EXPÉRIENCE ── */
+    .choice-section {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    }
+    .section-label {
+      font-family: var(--sans); font-size: 0.72rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      opacity: 0.45; margin-bottom: 40px; display: block;
+    }
+    .choice-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-bottom: 2px;
+    }
+    .choice-card {
+      background: var(--cream); padding: 36px 28px;
+      cursor: pointer; transition: background 0.25s;
+      border: 2px solid transparent;
+      position: relative;
+    }
+    .choice-card:hover { background: #ede7dc; }
+    .choice-card.selected {
+      background: var(--bordeaux); color: #fff; border-color: var(--bordeaux);
+    }
+    .choice-card input[type="radio"] {
+      position: absolute; opacity: 0; pointer-events: none;
+    }
+    .choice-card h3 {
+      font-family: var(--serif); font-size: 1.25rem;
+      font-weight: 400; margin-bottom: 8px;
+    }
+    .choice-card p {
+      font-family: var(--sans); font-size: 0.82rem;
+      line-height: 1.6; opacity: 0.7;
+    }
+    .choice-card.selected p { opacity: 0.85; }
+    .choice-price {
+      display: block; margin-top: 16px;
+      font-family: var(--serif); font-size: 1.2rem; font-weight: 400;
+    }
+
+    /* ── FORMULAIRE ── */
+    .form-section {
+      background: var(--cream);
+    }
+    .form-inner {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: start;
+    }
+    .form-left h2 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2; margin-bottom: 10px;
+    }
+    .form-left h2 em { font-style: italic; }
+    .form-left > p {
+      font-family: var(--serif); font-size: 1rem;
+      font-style: italic; opacity: 0.7; margin-bottom: 40px; line-height: 1.6;
+    }
+
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
+    }
+    .form-group {
+      display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px;
+    }
+    .form-group label {
+      font-family: var(--sans); font-size: 0.72rem;
+      letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.55;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      border: 1px solid var(--bordeaux-mid);
+      padding: 14px 16px;
+      font-family: var(--serif); font-size: 1rem; color: var(--bordeaux);
+      background: #fff; outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--bordeaux);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%236b1d24' opacity='.4'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+      cursor: pointer;
+    }
+
+    .form-submit {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: var(--bordeaux); color: #fff; border: none;
+      font-family: var(--serif); font-size: 1.05rem;
+      padding: 18px 36px; cursor: pointer;
+      transition: opacity 0.25s; margin-top: 8px;
+      width: 100%;
+      justify-content: center;
+    }
+    .form-submit:hover { opacity: 0.85; }
+
+    .form-note {
+      font-family: var(--sans); font-size: 0.78rem;
+      opacity: 0.5; margin-top: 14px; line-height: 1.6; text-align: center;
+    }
+
+    /* Bloc infos latéral */
+    .form-right { padding-top: 52px; }
+    .contact-block {
+      padding: 28px 0; border-bottom: 1px solid var(--bordeaux-mid);
+    }
+    .contact-block:first-child { padding-top: 0; }
+    .contact-block:last-child { border-bottom: none; }
+    .contact-block h3 {
+      font-family: var(--sans); font-size: 0.68rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      opacity: 0.45; margin-bottom: 10px;
+    }
+    .contact-block p, .contact-block a {
+      font-family: var(--serif); font-size: 1.05rem;
+      line-height: 1.7; color: var(--bordeaux); text-decoration: none;
+    }
+    .contact-block a {
+      border-bottom: 1px solid var(--bordeaux-mid);
+      transition: border-color 0.2s;
+    }
+    .contact-block a:hover { border-color: var(--bordeaux); }
+
+    /* Reassurance */
+    .reassurance {
+      background: var(--bordeaux); color: #fff;
+      padding: 32px 36px; margin-top: 2px;
+    }
+    .reassurance p {
+      font-family: var(--serif); font-size: 1rem;
+      font-style: italic; line-height: 1.7; opacity: 0.88;
+    }
+
+    /* ── BANDEAU BAS ── */
+    .final-section {
+      max-width: 1200px; margin: 80px auto; padding: 0 40px;
+      text-align: center;
+    }
+    .final-section h2 {
+      font-family: var(--serif); font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 300; margin-bottom: 12px;
+    }
+    .final-section p {
+      font-family: var(--serif); font-size: 1rem;
+      font-style: italic; opacity: 0.65;
+    }
+
+    footer {
+      padding: 40px; text-align: center;
+      font-family: var(--sans); font-size: 0.78rem;
+      letter-spacing: 0.1em; opacity: 0.4;
+      border-top: 1px solid var(--bordeaux-mid);
+    }
+
+    @media (max-width: 900px) {
+      .navbar { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .menu-hamburger { display: block; }
+      .page-header { grid-template-columns: 1fr; gap: 30px; padding: 0 24px; margin-top: 50px; }
+      .choice-section { padding: 50px 24px; }
+      .choice-grid { grid-template-columns: 1fr 1fr; }
+      .form-inner { grid-template-columns: 1fr; gap: 40px; padding: 50px 24px; }
+      .form-row { grid-template-columns: 1fr; }
+      .final-section { padding: 0 24px; margin: 50px auto; }
+    }

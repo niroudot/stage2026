@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Réservation – KÔKUN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="index.html">
+        <img src="img/image copy.png" alt="" class="logo">
+        </a>
+          <div class="nav_links">
+            <ul>
+              <li><a href="experiences.html">Experiences</a></li>
+              <li><a href="ateliers.html">Ateliers</a></li>
+              <li><a href="equipe.html">A propos</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              </ul>
+        </div>
+      <img src="img/Icônes Menu Burger.png" class="menu-hamburger" alt="menu">
+</nav>
+
+
+
+
+<!-- FORMULAIRE -->
+<div class="form-section">
+  <div class="form-inner">
+
+    <div class="form-left">
+      <h2>Votre<br><em>demande</em></h2>
+      <p>Répondez-nous dans les 48h. Si vous préférez nous appeler, nos coordonnées sont à droite.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="prenom">Prénom</label>
+          <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="nom">Nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Votre nom" autocomplete="family-name">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="votre@email.fr" autocomplete="email">
+      </div>
+
+      <div class="form-group">
+        <label for="telephone">Téléphone (facultatif)</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="+33 6 XX XX XX XX" autocomplete="tel">
+      </div>
+
+      <div class="form-group">
+        <label for="experience">Expérience souhaitée</label>
+        <select id="experience" name="experience">
+          <option value="">Choisissez une expérience</option>
+          <option value="shiatsu">Soin – Shiatsu (80 €)</option>
+          <option value="kobido">Soin – Kobido (80 €)</option>
+          <option value="reflexologie">Soin – Réflexologie (80 €)</option>
+          <option value="parcours">Parcours Nouveau Regard (220 €)</option>
+          <option value="photo">Photo-thérapie (180 €)</option>
+          <option value="journee">Journée Révélation de Soi</option>
+          <option value="atelier-estime">Atelier Estime de soi</option>
+          <option value="atelier-nutrition">Atelier Nutrition & corps</option>
+          <option value="atelier-menopause">Atelier Ménopause</option>
+          <option value="nesaispas">Je ne sais pas encore</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Votre message (facultatif)</label>
+        <textarea id="message" name="message" placeholder="Dites-nous ce qui vous amène, ce dont vous avez besoin, ou toute question que vous souhaiteriez poser…"></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Envoyer ma demande &rarr;</button>
+      <p class="form-note">Vos données ne seront jamais transmises à des tiers.<br>Nous vous répondrons sous 48h.</p>
+    </div>
+
+    <div class="form-right">
+      <div class="contact-block">
+        <h3>Email</h3>
+        <a href="mailto:contact@kokun-strasbourg.fr">contact@kokun-strasbourg.fr</a>
+      </div>
+      <div class="contact-block">
+        <h3>Téléphone</h3>
+        <a href="tel:+33663133535">+33 6 63 13 35 35</a>
+      </div>
+      <div class="contact-block">
+        <h3>Adresse</h3>
+        <p>KÔKUN chez GLIM<br>Strasbourg<br>(adresse communiquée à la réservation)</p>
+      </div>
+      <div class="contact-block">
+        <h3>Accès</h3>
+        <p>Proche tramway · PMR<br>Sur rendez-vous uniquement</p>
+      </div>
+      <div class="reassurance">
+        <p>Vous ne savez pas quelle expérience choisir ? C'est tout à fait normal. Dites-nous simplement où vous en êtes — nous vous guiderons avec douceur.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="final-section">
+  <h2>KÔKUN · Strasbourg</h2>
+  <p>Pour tous les corps et toutes les histoires.</p>
+</div>
+
+<footer>© KÔKUN · Strasbourg · Tous droits réservés</footer>
+
+<script>
+  // Gestion des cartes de choix
+  const cards = document.querySelectorAll('.choice-card');
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      cards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      // Sync avec le select du formulaire
+      const val = card.querySelector('input').value;
+      const select = document.getElementById('experience');
+      const mapping = {
+        soin: 'nesaispas',
+        parcours: 'parcours',
+        photo: 'photo',
+        atelier: 'journee'
+      };
+      if (mapping[val]) select.value = mapping[val];
+    });
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuHamburger= document.querySelector(".menu-hamburger");
+      const navLinks = document.querySelector(".nav_links");
+
+      menuHamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-menu");
+      });
+    });
+</script>
+</body>
+</html>

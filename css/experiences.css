@@ -1,0 +1,458 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bordeaux: #6b1d24;
+      --bordeaux-light: rgba(107,29,36,0.08);
+      --bordeaux-mid: rgba(107,29,36,0.18);
+      --cream: #f7f3ee;
+      --taupe: #d4c9b8;
+      --text: #3a1015;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    body {
+      font-family: var(--sans);
+      color: var(--bordeaux);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    
+    /* ── PAGE HEADER ── */
+    .page-header {
+      max-width: 1200px;
+      margin: 80px auto 60px;
+      padding: 0 40px;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: end;
+    }
+    .page-header-left {
+      border-left: 2px solid var(--bordeaux);
+      padding-left: 28px;
+    }
+    .page-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 16px;
+    }
+    .page-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .page-header-right p {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      line-height: 1.7;
+      font-style: italic;
+      opacity: 0.85;
+      margin-left: 20%;
+      margin-top: 7%;
+    }
+
+    /* ── SEPARATEUR ── */
+    .divider {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+      height: 1px;
+      background: var(--bordeaux-mid);
+    }
+
+    /* ── SECTION : SOINS ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+
+    .section-label {
+      font-family: var(--sans);
+      font-size: 0.80rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 50px;
+    }
+
+    /* Grille soins 3 colonnes */
+    .soins-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 0;
+    }
+
+    .soin-card {
+      background: var(--cream);
+      padding: 44px 36px 48px;
+      position: relative;
+      transition: background 0.35s ease;
+    }
+    .soin-card:hover { background: #eee8df; }
+
+    .soin-number {
+      font-family: var(--serif);
+      font-size: 5rem;
+      font-weight: 300;
+      color: var(--bordeaux);
+      opacity: 0.12;
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      line-height: 1;
+    }
+
+    .soin-name {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+    .soin-subtitle {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: 20px;
+      margin-bottom: 24px;
+    }
+    .soin-desc {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      font-style: italic;
+    }
+    .soin-meta {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      opacity: 0.65;
+      line-height: 1.8;
+    }
+    .soin-price {
+      display: inline-block;
+      margin-top: 20px;
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 600;
+      border-bottom: 1px solid var(--bordeaux);
+      padding-bottom: 2px;
+    }
+
+    /* Note adaptabilité */
+    .soins-note {
+      margin-top: 2px;
+      background: var(--bordeaux);
+      color: #fff;
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    .soins-note-text {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .soins-note-cta {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: var(--bordeaux);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      padding: 14px 28px;
+      transition: opacity 0.25s;
+    }
+    .soins-note-cta:hover { opacity: 0.8; }
+
+    /* ── SECTION : PARCOURS ── */
+    .parcours-section {
+      background: var(--cream);
+    }
+    .parcours-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+    }
+
+    .parcours-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+    .parcours-header-left .section-label { margin-bottom: 20px; }
+    .parcours-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+    }
+    .parcours-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+    .parcours-header-right {
+      padding-top: 40px;
+    }
+    .parcours-header-right p {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .parcours-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 2px;
+    }
+    .parcours-step {
+      background: #fff;
+      padding: 40px 32px;
+    }
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--bordeaux);
+      color: #fff;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .step-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      line-height: 1.65;
+      opacity: 0.7;
+    }
+
+    .parcours-resume {
+      background: #fff;
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    .parcours-resume-info {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    .parcours-resume-info strong { font-weight: 600; }
+    .parcours-price-big {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 300;
+      white-space: nowrap;
+    }
+    .parcours-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bordeaux);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      padding: 16px 32px;
+      transition: opacity 0.25s;
+      white-space: nowrap;
+    }
+    .parcours-cta:hover { opacity: 0.85; }
+
+    /* ── SECTION : PHOTO-THÉRAPIE ── */
+    .photo-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .photo-text .section-label { margin-bottom: 20px; }
+    .photo-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 30px;
+    }
+    .photo-title em { font-style: italic; }
+    .photo-desc {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      font-style: italic;
+      opacity: 0.85;
+      margin-bottom: 24px;
+    }
+    .photo-list {
+      list-style: none;
+      margin-bottom: 36px;
+    }
+    .photo-list li {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--bordeaux-mid);
+      display: flex;
+      gap: 12px;
+    }
+    .photo-list li::before {
+      content: "→";
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+    .photo-meta {
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      opacity: 0.6;
+      margin-bottom: 28px;
+      line-height: 1.8;
+    }
+    .photo-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--bordeaux);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      padding: 16px 32px;
+      transition: opacity 0.25s;
+    }
+    .photo-cta:hover { opacity: 0.85; }
+
+    .photo-visual {
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 2px;
+    }
+    .photo-img-main {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+    .photo-img-caption {
+      background: var(--bordeaux);
+      color: #fff;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+      padding: 20px 28px;
+      text-align: center;
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-banner {
+      background: var(--cream);
+      padding: 80px 40px;
+      text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300;
+      margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      opacity: 0.7;
+      margin-bottom: 36px;
+    }
+    .cta-banner-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bordeaux);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      padding: 16px 32px;
+      transition: opacity 0.25s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--bordeaux);
+      color: var(--bordeaux);
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1rem;
+      padding: 16px 32px;
+      transition: background 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { background: var(--bordeaux); color: #fff; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      opacity: 0.4;
+      border-top: 1px solid var(--bordeaux-mid);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .navbar { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .menu-hamburger { display: block; }
+
+      .page-header,
+      .parcours-header,
+      .photo-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .soins-grid,
+      .parcours-steps { grid-template-columns: 1fr; }
+      .soins-note { flex-direction: column; gap: 20px; }
+      .parcours-resume { flex-direction: column; text-align: center; gap: 20px; }
+      .section { padding: 50px 24px; }
+      .parcours-inner { padding: 50px 24px; }
+      .photo-img-main { height: 280px; }
+      .cta-banner { padding: 50px 24px; }
+    }

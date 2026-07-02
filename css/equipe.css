@@ -1,0 +1,209 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bordeaux: #6b1d24;
+      --bordeaux-mid: rgba(107,29,36,0.18);
+      --cream: #f7f3ee;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+    }
+    body { font-family: var(--sans); color: var(--bordeaux); background: #fff; overflow-x: hidden; }
+
+    /* ── OUVERTURE : citation en grand ── */
+    .opening {
+      max-width: 1200px; margin: 100px auto 80px; padding: 0 40px;
+    }
+    .opening-quote {
+      font-family: var(--serif); font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+      font-weight: 300; font-style: italic; line-height: 1.15;
+      color: var(--bordeaux); max-width: 900px;
+    }
+    .opening-quote em { font-style: normal; font-weight: 600; }
+    .opening-source {
+      margin-top: 28px;
+      font-family: var(--sans); font-size: 0.78rem;
+      letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.45;
+    }
+
+    /* ── SECTION FLORENCE ── */
+    .florence-section {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: center;
+    }
+    .florence-img-wrap { position: relative; }
+    .florence-img {
+      width: 100%; display: block; object-fit: cover;
+      aspect-ratio: 3/4; object-position: top center;
+    }
+    .florence-img-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: var(--bordeaux); color: #fff;
+      font-family: var(--serif); font-size: 1rem; padding: 18px 24px;
+    }
+    .florence-img-label strong { display: block; font-size: 1.2rem; margin-bottom: 2px; }
+    .florence-img-label span { opacity: 0.75; font-style: italic; font-size: 0.9rem; }
+
+    .florence-text { padding-top: 0; }
+    .section-label {
+      font-family: var(--sans); 
+      font-size: 0.90rem;
+      color: white;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      margin-bottom: 28px; display: block;
+    }
+    .florence-text h2 {
+      font-family: var(--serif); font-size: clamp(2rem, 3vw, 3rem);
+      font-weight: 300; line-height: 1.15; margin-bottom: 32px;
+    }
+    .florence-text h2 em { font-style: italic; }
+    .florence-text p {
+      font-family: var(--serif); font-size: 1.12rem;
+      line-height: 1.8; margin-bottom: 20px; opacity: 0.88;
+    }
+    .florence-text p strong { font-weight: 600; }
+    .florence-text blockquote {
+      border-left: 2px solid var(--bordeaux);
+      padding-left: 24px; margin: 36px 0;
+      font-family: var(--serif); font-size: 1.25rem;
+      font-style: italic; line-height: 1.6; opacity: 0.85;
+    }
+
+    /* ── GENÈSE DU NOM ── */
+    .genese-section {
+      background: var(--cream);
+    }
+    .genese-inner {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .genese-text span.section-label { display: block; margin-bottom: 28px; }
+    .genese-text h2 {
+      font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300; line-height: 1.2; margin-bottom: 28px;
+    }
+    .genese-text p {
+      font-family: var(--serif); font-size: 1.1rem;
+      line-height: 1.8; margin-bottom: 16px; opacity: 0.85;
+    }
+    .genese-word {
+      font-family: var(--serif); font-size: clamp(5rem, 12vw, 10rem);
+      font-weight: 300; color: var(--bordeaux); opacity: 0.1;
+      line-height: 1; text-align: center; letter-spacing: 0.05em;
+    }
+
+    /* ── ASSO À CORPS DE SOI ── */
+    .asso-section {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    }
+    .asso-header {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      margin-bottom: 60px;
+    }
+    .asso-header h2 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300; line-height: 1.2;
+    }
+    .asso-header p {
+      font-family: var(--serif); font-size: 1.1rem;
+      line-height: 1.75; font-style: italic; opacity: 0.8; padding-top: 8px;
+    }
+
+    .asso-team {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+    }
+    .asso-person {
+      background: var(--cream); padding: 48px 40px;
+      display: grid; grid-template-columns: 120px 1fr; gap: 32px; align-items: start;
+    }
+    .asso-person-img {
+      width: 120px; height: 120px; object-fit: cover; object-position: top center; display: block;
+    }
+    .asso-person-info h3 {
+      font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 4px;
+    }
+    .asso-person-info .role {
+      font-family: var(--sans); font-size: 0.75rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      opacity: 0.5; margin-bottom: 16px;
+    }
+    .asso-person-info p {
+      font-family: var(--serif); font-size: 1rem;
+      line-height: 1.7; opacity: 0.8;
+    }
+
+    /* ── VALEURS ── */
+    .valeurs-section { background: var(--bordeaux); }
+    .valeurs-inner {
+      max-width: 1200px; margin: 0 auto; padding: 80px 40px;
+    }
+    .valeurs-inner > span.section-label {
+      color: rgba(255,255,255,0.5);
+    }
+    .valeurs-inner h2 {
+      font-family: var(--serif); color: #fff;
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 300;
+      margin-bottom: 56px; max-width: 500px;
+    }
+    .valeurs-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    }
+    .valeur-item {
+      background: rgba(255,255,255,0.07); padding: 36px 32px;
+    }
+    .valeur-item h3 {
+      font-family: var(--serif); color: #fff;
+      font-size: 1.35rem; font-weight: 400; margin-bottom: 12px;
+    }
+    .valeur-item p {
+      font-family: var(--sans); color: rgba(255,255,255,0.65);
+      font-size: 0.88rem; line-height: 1.7;
+    }
+
+    /* CTA */
+    .cta-banner {
+      padding: 80px 40px; text-align: center;
+    }
+    .cta-banner h2 {
+      font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 300; margin-bottom: 16px;
+    }
+    .cta-banner p {
+      font-family: var(--serif); font-size: 1.1rem;
+      font-style: italic; opacity: 0.7; margin-bottom: 36px;
+    }
+    .cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--bordeaux); color: #fff;
+      text-decoration: none; font-family: var(--serif); font-size: 1rem;
+      padding: 16px 32px; transition: opacity 0.25s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 1px solid var(--bordeaux); color: var(--bordeaux);
+      text-decoration: none; font-family: var(--serif); font-size: 1rem;
+      padding: 16px 32px; transition: background 0.25s, color 0.25s;
+    }
+    .btn-secondary:hover { background: var(--bordeaux); color: #fff; }
+
+    footer {
+      padding: 40px; text-align: center;
+      font-family: var(--sans); font-size: 0.78rem;
+      letter-spacing: 0.1em; opacity: 0.4;
+      border-top: 1px solid var(--bordeaux-mid);
+    }
+
+    @media (max-width: 900px) {
+      .navbar { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .menu-hamburger { display: block; }
+      .florence-section, .genese-inner, .asso-header { grid-template-columns: 1fr; gap: 40px; }
+      .asso-team { grid-template-columns: 1fr; }
+      .asso-person { grid-template-columns: 80px 1fr; gap: 20px; }
+      .asso-person-img { width: 80px; height: 80px; }
+      .valeurs-grid { grid-template-columns: 1fr; }
+      .opening { margin-top: 50px; padding: 0 24px; }
+      .florence-section, .asso-section, .valeurs-inner { padding: 50px 24px; }
+      .genese-inner { padding: 50px 24px; }
+      .cta-banner { padding: 50px 24px; }
+      .genese-word { font-size: 5rem; }
+    }
