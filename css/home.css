@@ -396,6 +396,39 @@ body { font-family: var(--sans); color: var(--bordeaux); background: #fff; overf
     line-height:2;
     font-size: 1.3rem;
 }
+/* CTA */
+.cta-banner {
+  padding: 80px 40px; text-align: center;
+}
+.cta-banner h2 {
+  font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300; margin-bottom: 16px;
+}
+.cta-banner p {
+  font-family: var(--serif); font-size: 1.1rem;
+  font-style: italic; opacity: 0.7; margin-bottom: 36px;
+}
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgb(134, 14, 14); color: #ffffff;
+  text-decoration: none; font-family: var(--serif); font-size: 1rem;
+  padding: 16px 32px; transition: opacity 0.25s;
+}
+.btn-primary:hover { opacity: 0.85; }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid var(--bordeaux); color: var(--bordeaux);
+  text-decoration: none; font-family: var(--serif); font-size: 1rem;
+  padding: 16px 32px; transition: background 0.25s, color 0.25s;
+}
+.btn-secondary:hover { background: var(--bordeaux); color: #971212; }
+footer {
+  padding: 40px; text-align: center;
+  font-family: var(--sans); font-size: 0.78rem;
+  letter-spacing: 0.1em; opacity: 0.4;
+  border-top: 1px solid var(--bordeaux-mid);
+}
 @media (max-width: 1100px) {
   .hero-container {
     padding: 20px 15px;
