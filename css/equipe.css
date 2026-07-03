@@ -7,7 +7,7 @@
     }
     body { font-family: var(--sans); color: var(--bordeaux); background: #fff; overflow-x: hidden; }
 
-    /* ── OUVERTURE : citation en grand ── */
+    /* ── OUVERTURE ── */
     .opening {
       max-width: 1200px; margin: 100px auto 80px; padding: 0 40px;
     }

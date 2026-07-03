@@ -27,10 +27,8 @@
     </div>
 <section class="hero-container">
   
-  <!-- CONTENEUR DE TOUTES LES SLIDES -->
   <div class="hero-slider-wrapper">
 
-    <!-- SLIDE 1 (Active par défaut) -->
     <div class="hero-slide active">
       <div class="hero-text-side">
         <h1 class="hero-title">POUR TOUS LES CORPS<br> ET TOUTES LES<br>HISTOIRES</h1>
@@ -42,7 +40,6 @@
       </div>
     </div>
 
-    <!-- SLIDE 2 -->
     <div class="hero-slide">
       <div class="hero-text-side">
         <h1 class="hero-title">UN ESPACE<br>INCLUSIF À<br>STRASBOURG</h1>
@@ -54,7 +51,6 @@
       </div>
     </div>
 
-    <!-- SLIDE 3 -->
     <div class="hero-slide">
       <div class="hero-text-side">
         <h1 class="hero-title">POUR SE<br>RECONNECTER<br>A SOI</h1>
@@ -70,7 +66,6 @@ ralentir, se rencontrer autrement
 
   </div>
 
-  <!-- NAVIGATION UNIQUE (Reste fixe en bas à gauche) -->
   <div class="slider-navigation">
     <span class="arrow arrow-left" id="prevBtn">&larr;</span>
     <span class="slider-counter" id="slideCounter">1/3</span>
@@ -142,28 +137,14 @@ ralentir, se rencontrer autrement
 <section class="target-section">
 
     <div class="target-header">
-
-        <!-- <div class="target-line"></div> -->
-
         <div class="target-title">
             <h2>À QUI S'ADRESSE KŌKUN ?</h2>
-
-            <!-- <p>
-                KŌKUN EST PENSÉ POUR LES FEMMES QUI RESSENTENT LE BESOIN
-                DE SE RECONNECTER À ELLES-MÊMES.
-            </p> -->
         </div>
 
     </div>
 
     <div class="target-content">
-
-        
-
         <div class="target-text">
-
-            <!-- <h3>Notamment :</h3> -->
-
             <ul>
                 <li>les femmes qui ne se sentent plus totalement à l'aise avec leur corps ou leur image</li>
                 <li>les femmes en situation de handicap</li>
@@ -213,7 +194,7 @@ ralentir, se rencontrer autrement
 
       function startAutoPlay() {
         stopAutoPlay();
-        timer = setInterval(nextSlide, 5000);
+        timer = setInterval(nextSlide, 6000);
       }
 
       function stopAutoPlay() {
@@ -223,10 +204,10 @@ ralentir, se rencontrer autrement
       nextBtn.addEventListener("click", () => { nextSlide(); startAutoPlay(); });
       prevBtn.addEventListener("click", () => { prevSlide(); startAutoPlay(); });
 
-      // Optionnel : pause quand la souris est dessus
-      const container = document.querySelector(".hero-container");
-      container.addEventListener("mouseenter", stopAutoPlay);
-      container.addEventListener("mouseleave", startAutoPlay);
+      // // Optionnel : pause quand la souris est dessus
+      // const container = document.querySelector(".hero-container");
+      // container.addEventListener("mouseenter", stopAutoPlay);
+      // container.addEventListener("mouseleave", startAutoPlay);
 
       startAutoPlay();
 
